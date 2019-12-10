@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+  	<title>Page Title</title>
+</head>
+<body>
+  <script>
+let rockPaperScissors = ['Rock', 'Paper', 'Scissors'];
+
+let win = 0
+let lose = 0
+let draw = 0
+function computerPlay() {
+
+	let computerSelection = rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)]
+
+	return computerSelection
+}
+
+let computerSelection = computerPlay()
+
+function playRound (playerSelection, computerSelection) {
+let ps = playerSelection.toLowerCase();
+let cs = computerSelection.toLowerCase();
+ if (ps == cs) //draw = 2 lose = 1 win = 0
+ {return 2;}
+
+if (ps == 'rock') {if(cs == 'paper') 
+
+	return 1 
+			else { 
+				return 0
+			 }
+			}
+
+
+if (ps == 'scissors') {if(cs == 'rock') 
+
+	return 1
+			else { 
+				return 0
+			 }
+			}
+
+if (ps == 'paper') {if(cs == 'scissors') 
+
+	return 1
+			else { 
+				return 0
+			 }
+			}
+}
+
+function game() {
+	for (let i = 0; i < 5; i++) {
+		let playerSelection = prompt('Rock, Paper, or Scissors?');
+		let result = playRound(playerSelection,computerSelection);
+			if (result == 0) {
+				win++;
+				console.log('You win! ' + playerSelection + ' beats ' + computerSelection + '!');
+		} else if (result == 1) {
+			lose++;
+			console.log('You lose! ' + computerSelection + ' beats ' + playerSelection + '!');
+		}
+		else {
+			draw++;
+			console.log('Draw! You picked the same thing!');
+		}
+		}
+
+
+}
+
+
+  
+  </script>
+</body>
+</html>
