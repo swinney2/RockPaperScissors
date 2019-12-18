@@ -86,14 +86,12 @@ function lose(){
 function checkScoreAfterWin (){
 if (playerScore >= 5) { 
     result.textContent = 'Congrats! You won!' }
-if (computerScore >= 5){
-    result.textContent = 'Boo! You lose!'
-}
+
 else {
-result.textContent = playerSelection + ' beats ' + computerSelection + '.' + ' You win!'}}
+result.textContent = playerSelection + ' beats ' + computerSelection + '.' + ' You win!'}
+}
+   
 function checkScoreAfterLoss (){
-if (playerScore >= 5) { 
-    result.textContent = 'Congrats! You won!'  }
 if (computerScore >= 5){
     result.textContent = 'Boo! You lose!'
 } else {
